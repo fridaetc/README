@@ -1,4 +1,10 @@
-# Agility App
+<p align="center">
+   <img height="36" width="75" src="/AgilityLogoInverted.svg">
+</p>
+
+<h1 align="center">
+  Agility App
+</h1>
 
 - [Configs](#configs)
    - [Categories](#categories)
