@@ -51,11 +51,15 @@ widgets: {
 |  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
 |  `container`   |                 | object       |   Data handling config  |
-|  `container.component`   |        | string/`ComponentDataContainer`     |   Determines which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
+|  `container.component`   |        | string/`ComponentDataContainer`     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
 |  `container.endpoint`   |                 | string       |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
 |  `presentation`   |                 | object       |  Visual presentation config   |
+|  `presentation.component`   |                | string/`ComponentChart`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
+|  `presentation.chartType`   |                 | string       |  ...   |
+|  `...`   |                 | ...       |  ...   |
 |  `entitlement`   |                 | string       |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists   |
-|  `sidebar`   |                 | object       |  ...   |
+|  `sidebar`   |                 | object       |  What will be shown in the widget tab in the sidebar   |
+|  `...`   |                 | ...       |  ...   |
 |  `minW`   |      1           | int       |  The smallest width the widget can shrink to   |
 |  `minH`   |      1           | int       |  The smallest height the widget can shrink to   |
 |  `w`   |      4          | int       |  The initial width for the widget   |
@@ -85,3 +89,4 @@ https://material.io/icons/
 
 ### Components
 - `ComponentDataContainer`
+- `ComponentChart`
