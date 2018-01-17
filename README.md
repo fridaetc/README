@@ -5,9 +5,8 @@
 - [Config](#config)
    - [Categories](#categories)
    - [Widgets](#widgets)
-- Icons
-- Colors
-
+- [Icons](#icons)
+- [Colors](#colors)
 
 ## Config
 Configuration objects
@@ -35,9 +34,9 @@ categories: {
 
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
-|  `color`  |  #444           | string       |   Category colour                 |
+|  `color`  |  #444           | string/`color`       |   Category colour                 |
 |  `name`   |                 | string       |   Category title                  |
-|  `icon`   |                 | string       |   Category icon                   |
+|  `icon`   |                 | `icon`       |   Category icon                   |
 |  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
 
 ### Widgets
@@ -55,3 +54,13 @@ widgets: {
 |-----------|-----------------|--------------|-----------------------------------|
 |  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
+
+### Icons
+|    Name    |     Icon     | 
+|------------|---------------|
+|  `account child`  |   MEH     |
+
+### Colors
+|    Name    |     Color     | 
+|------------|---------------|
+|  `slime`  |   #B5CC18     |
