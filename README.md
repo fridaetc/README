@@ -1,9 +1,5 @@
-<p align="center">
-   <img height="36" width="75" src="/AgilityLogoInverted.svg">
-</p>
-
 <h1 align="center">
-  Agility App
+   <img height="72" width="150" src="/AgilityLogoInverted.svg">
 </h1>
 
 - [Configs](#configs)
@@ -17,10 +13,12 @@
 Configuration files
 
 ### Categories
-|    Key    |   Required   |     Default     |     Type     |            Description            |
-|-----------|--------------|-----------------|--------------|-----------------------------------|
-|  `color`  |              |  #444           | string       |   Sets the color of the category  |
-|  `name`   |  Yes         |                 | string       |   Sets the title of the category  |
+|    Key    |     Default     |     Type     |            Description            |
+|-----------|-----------------|--------------|-----------------------------------|
+|  `color`  |  #444           | string       |   Category colour                 |
+|  `name`   |                 | string       |   Category title                  |
+|  `icon`   |                 | string       |   Category icon                   |
+|  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
 
 ### Widgets
 Widgets
