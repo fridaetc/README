@@ -53,5 +53,5 @@ widgets: {
 
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
-|  `category`  | | string (category from `categories` config) | Sets the widgets category which appears in widget list and label of the widget |
+|  `category`  | | string (`uniqueCategoryKey`) | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
