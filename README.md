@@ -1,7 +1,3 @@
-<h1 align="center">
-   <img height="72" width="150" src="/AgilityLogoInverted.svg">
-</h1>
-
 - [Config](#config)
    - [Categories](#categories)
    - [Widgets](#widgets)
