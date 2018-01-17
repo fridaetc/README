@@ -6,6 +6,7 @@
    - [Results](#results)
 - [Icons](#icons)
 - [Colors](#colors)
+- [Components](#components)
 
 ## Config
 Configuration objects
