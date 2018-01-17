@@ -56,9 +56,7 @@ widgets: {
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
 
 ### Icons
-|    Name    |     Icon     | 
-|------------|---------------|
-|  `account child`  |   MEH     |
+https://material.io/icons/
 
 ### Colors
 |    Name    |     Color     |   HEX   |
