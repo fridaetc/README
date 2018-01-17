@@ -149,7 +149,7 @@ results:
 |  `entitlement`  | | string | Determines if the user can see the table. If not defined - No user can do this |
 
 ### Icons
-https://material.io/icons/
+https://material.io/icons/ (future)
 
 ### Colors
 |    Name    |     Color     |   HEX   |
