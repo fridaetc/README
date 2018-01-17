@@ -37,6 +37,7 @@ categories: {
 |  `icon`   |                 | `icon`       |   Category icon                   |
 |  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
 
+
 ### Widgets
 ```
 widgets: {
@@ -74,6 +75,7 @@ widgets: {
 
 
 ### Filters
+Creates filters for widgets
 ```
 filters: {
    endpoints: {
@@ -109,6 +111,7 @@ Filters (Temp):
 
 
 ### Options
+Creates dropdowns with widget settings
 ```
 options: {
    uniqueOptionKey: {
@@ -121,7 +124,9 @@ options: {
 
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
-|  `...`  | | ... | ... |
+|  `name`  | | string | Title of the option  |
+|  `defaultValue`  | | string | Default selected value of the dropdown |
+|  `options`  | | array[{text, value}] | Options for the dropdown |
 
 
 ### Results
