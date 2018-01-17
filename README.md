@@ -61,6 +61,6 @@ widgets: {
 |  `account child`  |   MEH     |
 
 ### Colors
-|    Name    |     Color     | 
-|------------|---------------|
-|  `slime`  |   #B5CC18     |
+|    Name    |     Color     |   HEX   |
+|------------|---------------|---------|
+|  `slime`  |  ![#B5CC18](https://placehold.it/15/B5CC18/000000?text=+)   | #B5CC18 |
