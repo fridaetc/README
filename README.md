@@ -1,7 +1,9 @@
 - [Config](#config)
    - [Categories](#categories)
    - [Widgets](#widgets)
+   - [Filters](#filters)
    - [Options](#options)
+   - [Results](#results)
 - [Icons](#icons)
 - [Colors](#colors)
 
@@ -13,7 +15,6 @@ Configuration objects
    widgets,
    filters,
    options,
-   messages,
    results
 }
 ```
@@ -72,6 +73,22 @@ widgets: {
 |  `h`   |      5           | int       |  The initial height for the widget   |
 
 
+### Filters
+```
+filters: {
+   uniqueFilterKey: {
+      key,
+      ...
+   },
+   ...
+}
+```
+
+|    Key    |     Default     |     Type     |            Description            |
+|-----------|-----------------|--------------|-----------------------------------|
+|  `...`  | | ... | ... |
+
+
 ### Options
 ```
 options: {
@@ -79,6 +96,19 @@ options: {
       key,
       ...
    },
+   ...
+}
+```
+
+|    Key    |     Default     |     Type     |            Description            |
+|-----------|-----------------|--------------|-----------------------------------|
+|  `...`  | | ... | ... |
+
+
+### Results
+```
+results: 
+   key,
    ...
 }
 ```
@@ -110,5 +140,6 @@ https://material.io/icons/
 |  `unknown`  |  ![#AAAAAA](https://placehold.it/15/AAAAAA/000000?text=+)   | #AAAAAA |
 
 ### Components
+List props etc
 - `ComponentDataContainer`
 - `ComponentChart`
