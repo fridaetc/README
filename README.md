@@ -54,10 +54,10 @@ widgets: {
 |  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
 |  `container`   |                 | object       |   Data handling config  |
-|  `container.component`   |        | string/`ComponentDataContainer`     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
+|  `container.component`   |        | string/`ComponentContainer`     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
 |  `container.endpoint`   | | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
 |  `presentation`   |                 | object       |  Visual presentation config   |
-|  `presentation.component`   |  | string/`ComponentChart`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
+|  `presentation.component`   |  | string/`ComponentPresentation`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
 |  `presentation.chartType`   | | string |  Used when presentation.component is predefined and a chart. Defines what type of chart to show in the Home page thumbnails   |
 |  `presentation.chartTitle`   |  | string    |  Used when presentation.component is predefined and a chart. Set the y title and tooltip title of the chart  |
 |  `presentation.chartColors`   | category.color |  array[string/`color`]   |  Used when presentation.component is predefined. Sets the widget content color (if applicable)  |
@@ -170,6 +170,15 @@ https://material.io/icons/
 |  `unknown`  |  ![#AAAAAA](https://placehold.it/15/AAAAAA/000000?text=+)   | #AAAAAA |
 
 ### Components
-List props etc
-- `ComponentDataContainer`
-- `ComponentChart`
+Custom components access to props via this.props.x (temp)
+1. `ComponentContainer`
+   - config = `uniqueWidgetKey` object
+   - widget = ...
+   - id = this widget id
+   - query = widget active query
+   - widgetContentUpdate = function(popupcomponent, errors, info, hasdata) 
+   - workspaceId = this workspace id
+
+2. `ComponentPresentation`
+   - data = data from call
+   - all of Data Containers props
