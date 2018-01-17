@@ -1,6 +1,7 @@
 - [Config](#config)
    - [Categories](#categories)
    - [Widgets](#widgets)
+   - [Options](#options)
 - [Icons](#icons)
 - [Colors](#colors)
 
@@ -52,18 +53,39 @@ widgets: {
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
 |  `container`   |                 | object       |   Data handling config  |
 |  `container.component`   |        | string/`ComponentDataContainer`     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
-|  `container.endpoint`   |                 | string       |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
+|  `container.endpoint`   | | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
 |  `presentation`   |                 | object       |  Visual presentation config   |
-|  `presentation.component`   |                | string/`ComponentChart`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
-|  `presentation.chartType`   |                 | string       |  ...   |
-|  `...`   |                 | ...       |  ...   |
-|  `entitlement`   |                 | string       |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists   |
+|  `presentation.component`   |  | string/`ComponentChart`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
+|  `presentation.chartType`   | | string |  Used when presentation.component is predefined and a chart. Defines what type of chart to show in the Home page thumbnails   |
+|  `presentation.chartTitle`   |  | string    |  Used when presentation.component is predefined and a chart. Set the y title and tooltip title of the chart  |
+|  `presentation.chartColors`   | category.color |  array[string/`color`]   |  Used when presentation.component is predefined. Sets the widget content color (if applicable)  |
+|  `presentation.stats`   |    |  array[object{name, key}]    |  Which stats to show in widgets top right popup   |
+|  `entitlement`   |  | string  |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists  |
+|  `exportEntitlement`   |  | string  |  Determines if the user can see export widgets data. If not defined - No user can do this  |
 |  `sidebar`   |                 | object       |  What will be shown in the widget tab in the sidebar   |
-|  `...`   |                 | ...       |  ...   |
+|  `sidebar.filters`   |      | object  |  Determines if to show filter section in sidebar, which displays filters defined in the filter config. If not defined or false and container.component is predefined, data will be presented straight away   |
+|  `sidebar.filters.stats`  | |  array[object{name, key}]  |  Which stats to show in sidebar filters   |
+|  `sidebar.options`  | |  array[`uniqueOptionKey`]  |  Shows options section in sidebar populated with content from options config   |
 |  `minW`   |      1           | int       |  The smallest width the widget can shrink to   |
 |  `minH`   |      1           | int       |  The smallest height the widget can shrink to   |
 |  `w`   |      4          | int       |  The initial width for the widget   |
 |  `h`   |      5           | int       |  The initial height for the widget   |
+
+
+### Options
+```
+options: {
+   uniqueOptionKey: {
+      key,
+      ...
+   },
+   ...
+}
+```
+
+|    Key    |     Default     |     Type     |            Description            |
+|-----------|-----------------|--------------|-----------------------------------|
+|  `...`  | | ... | ... |
 
 ### Icons
 https://material.io/icons/
