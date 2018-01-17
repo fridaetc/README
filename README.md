@@ -50,8 +50,10 @@ widgets: {
 |-----------|-----------------|--------------|-----------------------------------|
 |  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
-|  `container`   |                 | object       |   ...  |
-|  `presentation`   |                 | object       |  ...   |
+|  `container`   |                 | object       |   Data handling config  |
+|  `container.component`   |        | string/`ComponentDataContainer`     |   Determines which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
+|  `container.endpoint`   |                 | string       |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
+|  `presentation`   |                 | object       |  Visual presentation config   |
 |  `entitlement`   |                 | string       |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists   |
 |  `sidebar`   |                 | object       |  ...   |
 |  `minW`   |      1           | int       |  The smallest width the widget can shrink to   |
@@ -80,3 +82,6 @@ https://material.io/icons/
 |  `black`  |  ![#1B1C1D](https://placehold.it/15/1B1C1D/000000?text=+)   | #1B1C1D |
 |  `white`  |  ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+)   | #FFFFFF |
 |  `unknown`  |  ![#AAAAAA](https://placehold.it/15/AAAAAA/000000?text=+)   | #AAAAAA |
+
+### Components
+- `ComponentDataContainer`
