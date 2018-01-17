@@ -2,17 +2,37 @@
    <img height="72" width="150" src="/AgilityLogoInverted.svg">
 </h1>
 
-- [Configs](#configs)
+- [Config](#config)
    - [Categories](#categories)
    - [Widgets](#widgets)
 - Icons
 - Colors
 
 
-## Configs
-Configuration files
+## Config
+Configuration objects
+```
+{
+   categories,
+   widgets,
+   filters,
+   options,
+   messages,
+   results
+}
+```
 
 ### Categories
+```
+categories: {
+   uniqueCategoryKey: {
+      key,
+      ...
+   },
+   ...
+}
+```
+
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
 |  `color`  |  #444           | string       |   Category colour                 |
@@ -21,4 +41,17 @@ Configuration files
 |  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
 
 ### Widgets
-Widgets
+```
+widgets: {
+   uniqueWidgetKey: {
+      key,
+      ...
+   },
+   ...
+}
+```
+
+|    Key    |     Default     |     Type     |            Description            |
+|-----------|-----------------|--------------|-----------------------------------|
+|  `category`  | | string (category from `categories` config) | Sets the widgets category which appears in widget list and label of the widget |
+|  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
