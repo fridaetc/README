@@ -130,6 +130,7 @@ options: {
 
 
 ### Results
+Settings for the sticky results table
 ```
 results: 
    key,
@@ -139,7 +140,12 @@ results:
 
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
-|  `...`  | | ... | ... |
+|  `title`  | | string | Title of the results |
+|  `description`  | | string | Description of the results |
+|  `size`  | 8 | string | Table rows per page |
+|  `columns`  | w = 16/columns.length | array[{name, key, w}] | Which fields to show in the results. w = width of the table cell based on a 16 grid |
+|  `endpoint`  | | string | The endpoint to fetch the tables data from |
+|  `entitlement`  | | string | Determines if the user can see the table. If not defined - No user can do this |
 
 ### Icons
 https://material.io/icons/
