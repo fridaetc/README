@@ -32,9 +32,9 @@ categories: {
 }
 ```
 
-|    Key    |     Default     |     Type     |            Description            |
+|    Key    |     Default value     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
-|  `color`  |  #444           | string/`color`       |   Category colour                 |
+|  `color`  |  ![#444444](https://placehold.it/15/444444/000000?text=+) #444           | string/`color`       |   Category colour                 |
 |  `name`   |                 | string       |   Category title                  |
 |  `icon`   |                 | `icon`       |   Category icon                   |
 |  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
