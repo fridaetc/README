@@ -50,6 +50,14 @@ widgets: {
 |-----------|-----------------|--------------|-----------------------------------|
 |  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
 |  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
+|  `container`   |                 | object       |   ...  |
+|  `presentation`   |                 | object       |  ...   |
+|  `entitlement`   |                 | string       |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists   |
+|  `sidebar`   |                 | object       |  ...   |
+|  `minW`   |      1           | int       |  The smallest width the widget can shrink to   |
+|  `minH`   |      1           | int       |  The smallest height the widget can shrink to   |
+|  `w`   |      4          | int       |  The initial width for the widget   |
+|  `h`   |      5           | int       |  The initial height for the widget   |
 
 ### Icons
 https://material.io/icons/
