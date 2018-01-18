@@ -101,13 +101,14 @@ Endpoints:
 
 
 
-Filters (Temp):
+Filters:
 
 |    Key    |     Default     |     Type     |            Description            |
 |-----------|-----------------|--------------|-----------------------------------|
 |  `name`  | | string | Title of the filter |
 |  `category`  | | `uniqueCategoryKey` | Sets the filters category which appears in filters list |
-|  `filterComponent`  | | Dropdown | Which component should present the filter. Write a custom one (future) or choose from predefined ones (to be extended): Dropdown, Dropdownception, DateRange, NumberRange, ...  |
+|  `filterComponent`  | | | Which component should present the filter. Write a custom one (future) or choose from predefined: Dropdown, ...  |
+
 
 
 ### Options
@@ -181,4 +182,4 @@ Custom components access to props via this.props.x (temp)
 
 2. `ComponentPresentation`
    - data = data from call
-   - all of Data Containers props
+   - all of ComponentContainer props
