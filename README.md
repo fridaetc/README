@@ -1,3 +1,4 @@
+- Important
 - Config
    - Categories
    - Widgets
@@ -8,17 +9,24 @@
 - Colors
 - Components
 
+## Important
+
+This package currently doesnt support React 16, these are safe versions of react and react-dom:
+- "react": "^15.6.2",
+- "react-dom": "^15.6.2"
+
+
 ## Config
 
 Configuration objects
 ```
-{
+config = {{
    categories,
    widgets,
    filters,
    options,
    results
-}
+}}
 ```
 
 ### Categories
@@ -133,7 +141,7 @@ options: {
 ### Results
 Settings for the sticky results table
 ```
-results:
+results: {
    key,
    ...
 }
