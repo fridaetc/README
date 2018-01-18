@@ -1,14 +1,14 @@
-- <a href='#config'>Config</a>
-   - [Categories](#categories)
-   - [Widgets](#widgets)
-   - [Filters](#filters)
-   - [Options](#options)
-   - [Results](#results)
-- [Icons](#icons)
-- [Colors](#colors)
-- [Components](#components)
+- Config
+   - Categories
+   - Widgets
+   - Filters
+   - Options
+   - Results
+- Icons
+- Colors
+- Components
 
-<h2 name="config">Config</h2>
+## Config
 
 Configuration objects
 ```
@@ -132,7 +132,7 @@ options: {
 ### Results
 Settings for the sticky results table
 ```
-results: 
+results:
    key,
    ...
 }
@@ -176,7 +176,7 @@ Custom components access to props via this.props.x (temp)
    - widget = ...
    - id = this widget id
    - query = widget active query
-   - widgetContentUpdate = function(popupcomponent, errors, info, hasdata) 
+   - widgetContentUpdate = function(popupcomponent, errors, info, hasdata)
    - workspaceId = this workspace id
 
 2. `ComponentPresentation`
