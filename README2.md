@@ -1,13 +1,33 @@
 - Components
   - Api
+    - get
+    - post
+    - put
+    - _delete
+    - apiCall
   - Charts
+    - Bar
+    - Pie
+    - Column
+    - Map
   
 ## Components
 
 ### Api
 
-### Charts
-  
+#### get
+#### post
+#### put
+#### _delete
+#### apiCall
 
-Api: get, post, put, _delete, apiCall
-Charts: Bar, Column, Map, Pie
+### Charts
+
+#### Bar
+
+#### Pie
+
+#### Column (future)
+Not ready to use
+#### Map (future)
+Not ready to use
