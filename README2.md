@@ -7,8 +7,8 @@
     - _delete
   - Charts
     - Bar
-    - Pie
-    - Column
+    - Pie
+    - Column
     - Map
   
 ## Components
@@ -91,12 +91,44 @@ AgilityComponents.Api._delete('deleteData', token).then(response => {
 |------------|--------------|-----------------------------------|
 |  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/ |
 
+Example `config`:
+```
+{
+  yAxis: {
+    title: {
+      text: 'No. of cows'
+    }
+  },
+  series: [{
+    name: 'No. of cows',
+    data: [],
+    color: 'black'
+  }]
+}
+```
+
 #### Pie (not finished)
 `AgilityComponents.Charts.Pie`
 
 |    Prop    |     Type     |            Description            |
 |------------|--------------|-----------------------------------|
 |  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/  |
+
+Example `config`:
+```
+{
+  yAxis: {
+    title: {
+      text: 'No. of cows'
+    }
+  },
+  series: [{
+    name: 'No. of cows',
+    data: []
+  }],
+  colors: ["red", "green", "blue"]
+}
+```
 
 #### Column (future)
 Not ready to use
