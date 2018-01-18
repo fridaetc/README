@@ -106,8 +106,6 @@ Filters (Temp):
 |-----------|-----------------|--------------|-----------------------------------|
 |  `name`  | | string | Title of the filter |
 |  `category`  | | `uniqueCategoryKey` | Sets the filters category which appears in filters list |
-|  `filterType`  | | string | Needs to be the same as `uniqueFilterKey` atm (will be removed)  |
-|  `apiAlias`  | | string | Needs to be the same as `uniqueFilterKey` atm (will be removed) |
 |  `filterComponent`  | | Dropdown | Which component should present the filter. Write a custom one (future) or choose from predefined ones (to be extended): Dropdown, Dropdownception, DateRange, NumberRange, ...  |
 
 
