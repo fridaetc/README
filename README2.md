@@ -82,12 +82,24 @@ AgilityComponents.Api._delete('deleteData', token).then(response => {
 ```
 
 ### Charts
+`AgilityComponents.Charts`
 
-#### Bar
+#### Bar (not finished)
+`AgilityComponents.Charts.Bar`
 
-#### Pie
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/ |
+
+#### Pie (not finished)
+`AgilityComponents.Charts.Pie`
+
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/  |
 
 #### Column (future)
 Not ready to use
+
 #### Map (future)
 Not ready to use
