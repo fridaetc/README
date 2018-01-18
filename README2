@@ -1,0 +1,2 @@
+Api: get, post, put, _delete, apiCall
+Charts: Bar, Column, Map, Pie
