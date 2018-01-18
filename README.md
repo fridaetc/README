@@ -1,4 +1,4 @@
-- [Config](#config)
+- <a href='#config'>Config</a>
    - [Categories](#categories)
    - [Widgets](#widgets)
    - [Filters](#filters)
@@ -8,7 +8,8 @@
 - [Colors](#colors)
 - [Components](#components)
 
-## Config
+<h2 name="config">Config</h2>
+
 Configuration objects
 ```
 {
