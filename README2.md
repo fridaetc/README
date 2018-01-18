@@ -15,7 +15,9 @@
 `import AgilityComponents from 'agility-components';`
 
 ### Api
-Functions that returns promises (reject, resolve) for specified api calls
+Functions that returns promises (reject, resolve) for specified api calls.
+Resolve will send back the data
+Reject will send back an error with a type and a message
 `AgilityComponents.Api`
 
 #### apiCall
@@ -29,28 +31,55 @@ Function to GET data from an endpoint
 `get(string, object={}, token=null)`
 string: The endpoint where to get data
 object: Params to add to the endpoint
-token: Token created by apiCall to be able to cancel the call
+token: Token created by apiCall to be able to cancel the get
 
 Example for `GET /getData?param1=x&param2=y&param2=z`:
 ```
 AgilityComponents.Api.get('getData', {param1: "x", param2: ["y", "z"]}, token).then(response => {
-  //response = response data
-}).catch(e => {
-  //e.type = type of error
-  //e.message = error message
+}).catch(error => {
 });
 ```
 
 #### post
-`AgilityComponents.Api.post`
+Function to POST data to an endpoint
+`post(string, object={}, token=null)`
+string: The endpoint where to post data
+object: Body to send with the post
+token: Token created by apiCall to be able to cancel the post
+
+Example for `POST /postData BODY {param1: "x}`:
+```
+AgilityComponents.Api.post('postData', {param1: "x"}, token).then(response => {
+}).catch(error => {
+});
+```
 
 #### put
-`AgilityComponents.Api.put`
+Function to PUT data to an endpoint
+`put(string, object={}, token=null)`
+string: The endpoint where to put data
+object: Body to send with the put
+token: Token created by apiCall to be able to cancel the post
+
+Example for `PUT /putData BODY {param1: "x}`:
+```
+AgilityComponents.Api.put('putData', {param1: "x"}, token).then(response => {
+}).catch(error => {
+});
+```
 
 #### _delete
-`AgilityComponents.Api._delete`
+Function to DELETE data for an endpoint
+`_delete(string, token=null)`
+string: The endpoint where to delete data
+token: Token created by apiCall to be able to cancel the post
 
-
+Example for `DELETE /deleteData`:
+```
+AgilityComponents.Api._delete('deleteData', token).then(response => {
+}).catch(error => {
+});
+```
 
 ### Charts
 
