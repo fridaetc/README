@@ -1,4 +1,3 @@
-- Important
 - Config
    - Categories
    - Widgets
@@ -8,13 +7,6 @@
 - Icons
 - Colors
 - Components
-
-## Important
-
-This package currently doesnt support React 16, these are safe versions of react and react-dom:
-- "react": "^15.6.2",
-- "react-dom": "^15.6.2"
-
 
 ## Config
 
@@ -31,7 +23,7 @@ config = {{
 
 ### Categories
 ```
-categories: {
+categories = {
    uniqueCategoryKey: {
       key,
       ...
@@ -40,17 +32,17 @@ categories: {
 }
 ```
 
-|    Key    |     Default value     |     Type     |            Description            |
-|-----------|-----------------|--------------|-----------------------------------|
-|  `color`  |  ![#444444](https://placehold.it/15/444444/000000?text=+) #444           | string/`color`       |   Category colour                 |
-|  `name`   |                 | string       |   Category title                  |
-|  `icon`   |                 | `icon`       |   Category icon                   |
-|  `label`  | false           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
+|    Key    | Required  |    Default value     |     Type     |            Description            |
+|-----------|-----------|-----------------|--------------|-----------------------------------|
+|  `name`   |  Yes |               | string       |   Category title                  |
+|  `color`  | | ![#444444](https://placehold.it/15/444444/000000?text=+) #444           | string(`color`)       |   Category colour, from list of predefined colours or hex like #000000                 |
+|  `icon`   |       |          | string(`icon`)       |   Category icon, from list of predefined icons                   |
+|  `label`  |     |           | boolean      |   Defines if the category label should be visible in the bottom left corner of the widgets|
 
 
 ### Widgets
 ```
-widgets: {
+widgets = {
    uniqueWidgetKey: {
       key,
       ...
@@ -59,29 +51,27 @@ widgets: {
 }
 ```
 
-|    Key    |     Default     |     Type     |            Description            |
-|-----------|-----------------|--------------|-----------------------------------|
-|  `category`  | | `uniqueCategoryKey` | Sets the widgets category which appears in widget list and label of the widget |
-|  `name`   |                 | string       |   Widgets default title (can be renamed by user)  |
-|  `container`   |                 | object       |   Data handling config  |
-|  `container.component`   |        | string/`ComponentContainer`     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
-|  `container.endpoint`   | | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
-|  `presentation`   |                 | object       |  Visual presentation config   |
-|  `presentation.component`   |  | string/`ComponentPresentation`  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, ... Ignored if container.component is a custom component  |
-|  `presentation.chartType`   | | string |  Used when presentation.component is predefined and a chart. Defines what type of chart to show in the Home page thumbnails   |
-|  `presentation.chartTitle`   |  | string    |  Used when presentation.component is predefined and a chart. Set the y title and tooltip title of the chart  |
-|  `presentation.chartColors`   | category.color |  array[string/`color`]   |  Used when presentation.component is predefined. Sets the widget content color (if applicable)  |
-|  `presentation.stats`   |    |  array[object{name, key}]    |  Which stats to show in widgets top right popup   |
-|  `entitlement`   |  | string  |  Determines if the user can see the widgets content / add it to a workspace. If not defined - no user can do this, but it will still appear in the lists  |
-|  `exportEntitlement`   |  | string  |  Determines if the user can see export widgets data. If not defined - No user can do this  |
-|  `sidebar`   |                 | object       |  What will be shown in the widget tab in the sidebar   |
-|  `sidebar.filters`   |      | object  |  Determines if to show filter section in sidebar, which displays filters defined in the filter config. If not defined or false and container.component is predefined, data will be presented straight away   |
-|  `sidebar.filters.stats`  | |  array[object{name, key}]  |  Which stats to show in sidebar filters   |
-|  `sidebar.options`  | |  array[`uniqueOptionKey`]  |  Shows options section in sidebar populated with content from options config   |
-|  `minW`   |      1           | int       |  The smallest width the widget can shrink to   |
-|  `minH`   |      1           | int       |  The smallest height the widget can shrink to   |
-|  `w`   |      4          | int       |  The initial width for the widget   |
-|  `h`   |      5           | int       |  The initial height for the widget   |
+|    Key    | Required  |     Default     |     Type     |            Description            |
+|-----------|-----------|-----------------|--------------|-----------------------------------|
+|  `category` | Yes | | string(`uniqueCategoryKey`) | Sets the widgets category which appears in widget list and label of the widget |
+|  `name`   | Yes |               | string       |   Widgets default title (can be renamed by user)  |
+|  `container`   |  Yes   |            | object       |   Data handling config  |
+|  `container.component`   | Yes |      | string/function(`ContainerComponent`)     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
+|  `container.endpoint`  | If container.component = string | | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
+|  `presentation`   |  If container.component = string   |            | object       |  Visual presentation config   |
+|  `presentation.component` | If container.component = string |  | string/function(`PresentationComponent`)  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, Table ... Ignored if container.component is a custom component  |
+|  `presentation.chartType`  | | | string |  Used when presentation.component is predefined. Defines what type of chart to show in the homepage thumbnails. Choose from predefined ones: bar, pie, column, map   |
+|  `presentation.chartTitle`  | |  | string    |  Used when presentation.component is predefined and a chart. Set the y title and tooltip title of the chart  |
+|  `presentation.chartColors`  | | category.color |  array[string(`color`)]   |  Used when presentation.component is predefined. Sets the widget content color (if applicable)  |
+|  `entitlement`   | Yes | | string  |  Determines if the user can see the widgets content / add it to a workspace  |
+|  `exportEntitlement` |  |  | string  |  Determines if the user can see export widgets data  |
+|  `sidebar`   |   |              | object       |  What will be shown in the widget tab in the sidebar   |
+|  `sidebar.filters`   | |     | boolean  |  Determines if to show filter section in sidebar, which displays filters defined in the filter config. If not defined or false and container.component is predefined, data will be presented straight away in the widget rather than clicking "run" from sidebar   |
+|  `sidebar.options`|  | |  array[string(`uniqueOptionKey`)]  |  Shows options section in sidebar populated with content from options config   |
+|  `minW`   |   |   1           | int       |  The smallest width the widget can shrink to   |
+|  `minH`   |  |    1           | int       |  The smallest height the widget can shrink to   |
+|  `w`   |    |  4          | int       |  The initial width for the widget   |
+|  `h`   |   |   5           | int       |  The initial height for the widget   |
 
 
 ### Filters
