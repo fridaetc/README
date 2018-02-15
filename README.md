@@ -77,11 +77,9 @@ widgets = {
 ### Filters
 Creates filters for widgets
 ```
-filters: {
-   endpoints: {
-      key,
-      ...
-   },
+filters = {
+   key,
+   ...
    filters: {
       uniqueFilterKey: {
          key,
@@ -90,22 +88,27 @@ filters: {
    }
 }
 ```
-Endpoints:
-
-|    Key    |     Default     |     Type     |            Description            |
-|-----------|-----------------|--------------|-----------------------------------|
-|  `filterValues`  | | string | Endpoint to populate all the filter components with values |
-|  `totalResults`  | | string | Endpoint to get the stats |
-
-
-
 Filters:
 
-|    Key    |     Default     |     Type     |            Description            |
-|-----------|-----------------|--------------|-----------------------------------|
-|  `name`  | | string | Title of the filter |
-|  `category`  | | `uniqueCategoryKey` | Sets the filters category which appears in filters list |
-|  `filterComponent`  | | | Which component should present the filter. Write a custom one (future) or choose from predefined: Dropdown, ...  |
+|    Key    | Required |     Default     |     Type     |            Description            |
+|-----------|----------|-----------------|--------------|-----------------------------------|
+|  `endpoints`  | Yes | | object | Endpoints |
+|  `endpoints.filterValues`  | If filters = defined | | string | Endpoint to populate all the filter components with values |
+|  `endpoints.totalResults`  | if totalResults = defined | | string | Endpoint to get the stats at the top of the sidebar |
+|  `totalResults`  | | | array[object{key, name}] | What to display in the stats, key comes from the endpoints response data |
+
+
+
+Filters.filters:
+
+|    Key    | Required|     Default     |     Type     |            Description            |
+|-----------|----------|-----------------|--------------|-----------------------------------|
+|  `name`  | Yes | | string | Title of the filter |
+|  `category`  | Yes | | string(`uniqueCategoryKey`) | Sets the filters category which appears in filters list |
+|  `component` | Yes | | | Which component should present the filter. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
+|  `autoComplete`  |  | | boolean | If filter should have autocomplete, only works when component is Dropdown |
+|  `autoCompleteEndpoint`  | If autoComplete = true | | string | Endpoint to populate the dropdown filter with autocomplete results |
+|  `wildcard`  |  | | boolean | If filter is autocomplete and Dropdown, option to add wildcard search from the search string  |
 
 
 
