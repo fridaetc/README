@@ -171,7 +171,7 @@ results = {
 https://material.io/icons/ 
 
 Agility specific:
-activity, air temp, businesses, cattle, chart area, chart bar, chart column, chart delta, chart line, chart pivot, chart scatter, companies, contracts, crop, droplets, equipment, farms, fields, fields vert, fog, fuel, holdings, humidity, mass, precipitation, products, soil temp, stock, trade, trade items, treatments, volume, wind speed 
+activity, air temp, businesses, cattle, chart area, chart bar, chart column, chart delta, chart line, chart pivot, chart scatter, companies, contracts, crop, droplets, equipment, farms, fields, fields vert, fog, holdings, humidity, mass, precipitation, products, soil temp, stock, trade, trade items, treatments, volume, wind speed 
 
 
 ## Colors
