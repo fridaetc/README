@@ -1,12 +1,16 @@
-- Config
-   - Categories
-   - Widgets
-   - Filters
-   - Options
-   - Results
-- Icons
-- Colors
-- Components
+- App
+  - Config
+     - Categories
+     - Widgets
+     - Filters
+     - Options
+     - Results
+  - Icons
+  - Colors
+  - Components
+
+## App
+`import AgilityApp from 'agility-app';`
 
 ## Config
 
