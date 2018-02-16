@@ -110,6 +110,7 @@ Filters.filters:
 |  `name`  | Yes | string | Title of the filter |
 |  `category`  | Yes | string(`uniqueCategoryKey`) | Sets the filters category which appears in filters list |
 |  `component` | Yes | string/function(`FilterComponent`)| Which component should present the filter. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
+|  `items` | | array[{text, value}] | Static items for the filter |
 |  `autoComplete`  | | boolean | If filter should have autocomplete, only works when component is Dropdown |
 |  `autoCompleteEndpoint`  | If autoComplete = true | string | Endpoint to populate the dropdown filter with autocomplete results |
 |  `wildcard`  | | boolean | If filter is autocomplete and Dropdown, option to add wildcard search from the search string  |
