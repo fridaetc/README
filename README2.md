@@ -1,15 +1,25 @@
 - Components
-  - Api
+  - api
     - apiCall
     - get
     - post
     - put
     - _delete
-  - Charts
+  - Widgets
     - Bar
     - Pie
     - Column
     - Map
+    - Empty
+    - Table
+  - Filters
+    - Checkbox
+    - DateRangePicker
+    - Dropdown
+    - NumberRange
+    - Slider
+  - styles
+    - colors
   
 ## Components
 `import AgilityComponents from 'agility-components';`
@@ -81,34 +91,38 @@ AgilityComponents.Api._delete('deleteData', token).then(response => {
 });
 ```
 
-### Charts
-`AgilityComponents.Charts`
+### Widgets
+`import { Widgets } from 'agility-components';`
 
-#### Bar (not finished)
-`AgilityComponents.Charts.Bar`
+#### Bar
+`Widgets.Bar`
 
 |    Prop    |     Type     |            Description            |
 |------------|--------------|-----------------------------------|
 |  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/ |
+|  `preview`  | boolean |  If the widget is shown in the workspace or as a preview in the widgets list  |
 
 Example `config`:
 ```
 {
   yAxis: {
     title: {
-      text: 'No. of cows'
+      text: 'Cows'
     }
   },
   series: [{
-    name: 'No. of cows',
-    data: [],
+    name: 'Cows',
+     data: [
+      {name: "Brown cow", y: 45},
+      {name: "Red cow", y: 1},
+    ]
     color: 'black'
   }]
 }
 ```
 
-#### Pie (not finished)
-`AgilityComponents.Charts.Pie`
+#### Pie
+`Widgets.Pie`
 
 |    Prop    |     Type     |            Description            |
 |------------|--------------|-----------------------------------|
@@ -119,19 +133,55 @@ Example `config`:
 {
   yAxis: {
     title: {
-      text: 'No. of cows'
+      text: 'Cows'
     }
   },
   series: [{
-    name: 'No. of cows',
-    data: []
+    name: 'Cows',
+    data: [
+      {name: "Brown cow", y: 45},
+      {name: "Red cow", y: 1},
+    ]
   }],
-  colors: ["red", "green", "blue"]
+  colors: ["brown", "red"]
 }
 ```
 
-#### Column (future)
-Not ready to use
+#### Column
+`Widgets.Column`
+
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `config`  | object | Highcharts configuration object https://api.highcharts.com/highcharts/  |
+
+Example `config`:
+```
+{
+  yAxis: {
+    title: {
+      text: 'Number of Cows'
+    }
+  },
+  xAxis: {
+    title: {
+      text: 'Type of Cow'
+    },
+    categories: ["Normal cow", "Angry cow"]
+  },
+  series: [
+    {
+      name: 'Brown',
+      color: 'brown',
+      data: [43, 0]
+    },
+    {
+      name: 'Red',
+      color: 'red',
+      data: [2, 1]
+    }
+  ]
+}
+```
 
 #### Map (future)
 Not ready to use
