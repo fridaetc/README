@@ -220,6 +220,31 @@ Functions props
 
 
 ### `WidgetContainerPresentation`
-Props
-   - data = data from call
-   - all of ComponentContainer props
+Data props
+   - data = The repsonse data from the endpoint call
+   - preview = If the widget is shown in the workspace or as a preview in the widgets list
+   - catConfig = `uniqueCategoryKey` object
+   - config = `uniqueWidgetKey` object
+
+### `FilterComponent`
+Data props
+   - config = `uniqueFilterKey` object
+   - id = Active widget id
+   - items = Filter items
+   - selected = Selected filter items
+   - messages = App error, info, success and warning messages
+   
+Functions props
+   - onChange = Function to call when the selected value for the filter changed, will be sent back en the selected prop, onChange("New value")
+   - onError = Function to call to set or remove an error message for the filter, onError("Something went wrong"/false)
+
+### `OptionComponent`
+Data props
+
+
+### `ResultsContainerComponent`
+Data props
+
+
+### `ResultsContainerPresentation`
+Data props
