@@ -156,18 +156,20 @@ results = {
 |  `presentation.component` | If container.component = string | string/function(`ResultsresentationComponent`)  |  Which component should present the data. Write a custom one or choose from predefined ones: Table ... Ignored if container.component is a custom component  |
 |  `presentation.rowLink`  | | function | If presentation.component = Table, defines what url each row in the table should have. Gets param data, should return string |
 |  `presentation.rowLinkEntitlement`  | If presentation.rowLink = defined | string | If presentation.component = Table, determines if the user can open the row link |
-|  `presentation.rowsPerPage`  | | number | If presentation.component = Table, defines rows per page, defaults to 8. Min 1 |
+|  `presentation.rowsPerPage`  | | int | If presentation.component = Table, defines rows per page, defaults to 8. Min 1 |
 |  `presentation.sort`  | | string | If presentation.component = Table, defines what to sort after, asc or desc  |
 |  `presentation.sortBy`  | | string | If presentation.component = Table, defines what column to sort after  |
 |  `presentation.columns`  | If presentation.component = Table | array[{name, key, w}] | If presentation.component = Table, defines which fields to show in the results. w = width of the table cell based on a 16 grid |
 
 
-### Icons
+## Icons
 https://material.io/icons/ 
 
+Agility specific:
+activity, air temp, businesses, cattle, chart area, chart bar, chart column, chart delta, chart line, chart pivot, chart scatter, companies, contracts, crop, droplets, equipment, farms, fields, fields vert, flower, fog, fuel, holdings, humidity, mass, precipitation, products, soil temp, stock, trade, trade items, treatments, volume, wind speed 
 
 
-### Colors
+## Colors
 |    Name    |     Color     |   HEX   |
 |------------|---------------|---------|
 |  `slime`  |  ![#B5CC18](https://placehold.it/15/B5CC18/000000?text=+)   | #B5CC18 |
@@ -186,9 +188,20 @@ https://material.io/icons/
 |  `white`  |  ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+)   | #FFFFFF |
 |  `unknown`  |  ![#AAAAAA](https://placehold.it/15/AAAAAA/000000?text=+)   | #AAAAAA |
 
-### Components
-Custom components access to props via this.props.x (temp)
-1. `ComponentContainer`
+
+## Components
+Custom components access to props via this.props.x
+
+`WidgetContainerComponent`
+`WidgetContainerPresentation`
+`FilterComponent`
+`OptionComponent`
+`ResultsContainerComponent`
+`ResultsContainerPresentation`
+
+
+### `WidgetContainerComponent`
+Props
    - config = `uniqueWidgetKey` object
    - widget = ...
    - id = this widget id
@@ -196,6 +209,8 @@ Custom components access to props via this.props.x (temp)
    - widgetContentUpdate = function(popupcomponent, errors, info, hasdata)
    - workspaceId = this workspace id
 
-2. `ComponentPresentation`
+
+### `WidgetContainerPresentation`
+Props
    - data = data from call
    - all of ComponentContainer props
