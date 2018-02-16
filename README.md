@@ -190,7 +190,7 @@ activity, air temp, businesses, cattle, chart area, chart bar, chart column, cha
 
 
 ## Components
-Custom components access to props via this.props.x
+Custom components have access to props via this.props.x
 
 `WidgetContainerComponent`
 `WidgetContainerPresentation`
@@ -201,13 +201,22 @@ Custom components access to props via this.props.x
 
 
 ### `WidgetContainerComponent`
-Props
+Data props
+   - catConfig = `uniqueCategoryKey` object
+   - collapsed = If the workspace is collapsed or not
    - config = `uniqueWidgetKey` object
-   - widget = ...
-   - id = this widget id
-   - query = widget active query
-   - widgetContentUpdate = function(popupcomponent, errors, info, hasdata)
-   - workspaceId = this workspace id
+   - id = Id of the widget 
+   - messages = App error, info, success and warning messages
+   - query = Widgets active query
+   - widget = Settings and info about the widget
+   - workspaceId = Id of the current workspace 
+   
+Functions props
+   - setErrorMessage = Function to call to set or remove an error message for the widget, setErrorMessage("Something went wrong"/false)
+   - setHasData = Function to call to set if the widget has got data or not, if false an info message will be shown automatically, setHasData(true/false)
+   - setInfoMessage = Function to call to set or remove an info message for the widget, setInfoMessage({title: "Info title", text: "Info text"}/false)
+   - setInfoPopup = Function to call to set the table data and warnings for the widgets top right popup, setInfoPopup(["Warning message 1", "Warning message 2"], [{title: "Column 1 title", value: "Column 1 value"}])
+   - setIsLoading = Function to call to show or hide the loader for the widget, setIsLoading(true/false)
 
 
 ### `WidgetContainerPresentation`
