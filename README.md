@@ -240,11 +240,43 @@ Functions props
 
 ### `OptionComponent`
 Data props
-
+   - id = Active widget id
+   - type = `uniqueOptionKey`
+   - config = `uniqueOptionKey` object
+   - selected = Selected option items
+   - messages = App error, info, success and warning messages
+   - items = `uniqueOptionKey` object items
+   - disabled = If option should be disabled or not
+   - singleSelect = If option should be single select or not
+   
+Functions props
+   - onChange = Function to call when the selected value for the option changed, will be sent back en the selected prop, onChange("New value")
 
 ### `ResultsContainerComponent`
 Data props
+   - id = Id of the current active widget 
+   - workspaceId = Id of the current workspace 
+   - config = `results` object
+   - messages = App error, info, success and warning messages
+   - entitlements = Current user entitlement codes
+   - widget = Settings and info about the current active widget
+   - query = Current active widget active query
+   
+Functions props
+   - setErrorMessage = Function to call to set or remove an error message for the results, setErrorMessage("Something went wrong"/false)
+   - setHasData = Function to call to set if the results has got data or not, if false an info message will be shown automatically, setHasData(true/false)
+   - setInfoMessage = Function to call to set or remove an info message for the results, setInfoMessage({title: "Info title", text: "Info text"}/false)
+   - setParams = Function to call to set extra params for the endpoint call, setParams({extraParam: "x"})
+   - setIsLoading = Function to call to show or hide the loader for the results, setIsLoading(true/false)
 
 
 ### `ResultsContainerPresentation`
 Data props
+   - activeId = Id of the current active widget 
+   - config = `results` presentation object
+   - data = The repsonse data from the endpoint call
+   - entitlements = Current user entitlement codes
+   - triggerChildGetData = Incremented value every time the active widget is updated and the component should trigger a getData call
+
+Functions props
+   - getData = Function to call to trigger the data endpoint call
