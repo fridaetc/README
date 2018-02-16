@@ -226,3 +226,43 @@ Example `data`:
   ]
 }
 ```
+
+### Filters
+`import { Filters } from 'agility-components';`
+
+#### Checkbox
+`Filters.Checkbox`
+
+Props: https://react.semantic-ui.com/modules/checkbox
+
+#### DateRangePicker
+`Filters.DateRangePicker`
+
+Props: https://github.com/airbnb/react-dates (DateRangePicker)
+
+#### Dropdown
+`Filters.Dropdown`
+
+Props: https://react.semantic-ui.com/modules/dropdown
+
+#### NumberRange
+`Filters.NumberRange`
+
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `min`  | int | Min range value |
+|  `max`  | int |  Max range value |
+|  `warning`  | string |  Warning message below filter |
+|  `onChange`  | function |  On values change callback function |
+
+#### Slider
+`Filters.Slider`
+
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `min`  | int | Min range value |
+|  `max`  | int |  Max range value |
+|  `label`  | string |  Label centered under slider in between input fields |
+|  `values`  | array[start, end]|  Selected range, for example [3, 5]  |
+|  `marks`  | object |  Marked out values, for example {0: "Start", 10: "End"} |
+|  `onChange`  | function |  On values change callback function |
