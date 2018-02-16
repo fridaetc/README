@@ -28,7 +28,8 @@
 Functions that returns promises (reject, resolve) for specified api calls.
 - Resolve will send back the data
 - Reject will send back an error with a type and a message
-`AgilityComponents.Api`
+
+`import { Api } from 'agility-components';`
 
 #### apiCall
 Function to use with other api calls in order to be able to cancel the call at any point
@@ -45,7 +46,7 @@ Function to GET data from an endpoint
 
 Example for `GET /getData?param1=x&param2=y&param2=z`:
 ```
-AgilityComponents.Api.get('getData', {param1: "x", param2: ["y", "z"]}, token).then(response => {
+Api.get('getData', {param1: "x", param2: ["y", "z"]}, token).then(response => {
 }).catch(error => {
 });
 ```
@@ -59,7 +60,7 @@ Function to POST data to an endpoint
 
 Example for `POST /postData BODY {param1: "x}`:
 ```
-AgilityComponents.Api.post('postData', {param1: "x"}, token).then(response => {
+Api.post('postData', {param1: "x"}, token).then(response => {
 }).catch(error => {
 });
 ```
@@ -73,7 +74,7 @@ Function to PUT data to an endpoint
 
 Example for `PUT /putData BODY {param1: "x}`:
 ```
-AgilityComponents.Api.put('putData', {param1: "x"}, token).then(response => {
+Api.put('putData', {param1: "x"}, token).then(response => {
 }).catch(error => {
 });
 ```
@@ -86,7 +87,7 @@ Function to DELETE data for an endpoint
 
 Example for `DELETE /deleteData`:
 ```
-AgilityComponents.Api._delete('deleteData', token).then(response => {
+Api._delete('deleteData', token).then(response => {
 }).catch(error => {
 });
 ```
@@ -266,3 +267,11 @@ Props: https://react.semantic-ui.com/modules/dropdown
 |  `values`  | array[start, end]|  Selected range, for example [3, 5]  |
 |  `marks`  | object |  Marked out values, for example {0: "Start", 10: "End"} |
 |  `onChange`  | function |  On values change callback function |
+
+### Styles
+`import { styles } from 'agility-components';`
+
+#### Colors
+`styles.colors`
+
+Object of predefined colours
