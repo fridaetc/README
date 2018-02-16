@@ -10,9 +10,16 @@
   - Components
 
 ## App
+
+Installation:
+`npm install --save vor-agility`
+
+Usage:
 `import AgilityApp from 'agility-app';`
 
 ## Config
+
+Application's behaviour can be set via configuration files:
 
 Configuration objects
 ```
@@ -26,6 +33,9 @@ config = {{
 ```
 
 ### Categories
+
+Filter and widgets are grouped by categories. 
+
 ```
 categories = {
    uniqueCategoryKey: {
@@ -45,6 +55,8 @@ categories = {
 
 
 ### Widgets
+
+Presentation units that fecth and render data. Widgets are independent from each other. 
 ```
 widgets = {
    uniqueWidgetKey: {
@@ -57,19 +69,19 @@ widgets = {
 
 |    Key    | Required  |     Type     |            Description            |
 |-----------|-----------|--------------|-----------------------------------|
-|  `category` | Yes | string(`uniqueCategoryKey`) | Sets the widgets category which appears in widget list and label of the widget |
-|  `name`   | Yes |   string       |   Widgets default title (can be renamed by user)  |
+|  `category` | Yes | string(`uniqueCategoryKey`) | Sets the widgets category which appears in widget list and label of the widget. It has to match the category name set in the categories configuration file. |
+|  `name`   | Yes |   string       |   Widgets default title  |
 |  `container`   |  Yes     | object       |   Data handling config  |
-|  `container.component`   | Yes | string/function(`WidgetContainerComponent`)     |   Which component should handle the data. Write a custom one or choose from predefined ones: DataContainer, ...  |
+|  `container.component`   | Yes | string &#124; function(`WidgetContainerComponent`)     |   Which component should handle the data. Choose from predefined ones (set `container.component` to a string) or write a custom one or choose from predefined ones (set `container.component` to the actual component.   |
 |  `container.endpoint`  | If container.component = string | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
 |  `presentation`   |  If container.component = string  | object       |  Visual presentation config   |
-|  `presentation.component` | If container.component = string | string/function(`WidgetPresentationComponent`)  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, Table ... Ignored if container.component is a custom component  |
+|  `presentation.component` | If container.component = string | string &#124; function(`WidgetPresentationComponent`)  |  Which component should present the data. Write a custom one or choose from predefined ones: BarChart, PieChart, Table ... Ignored if container.component is a custom component  |
 |  `presentation.chartType`  | | string |  Used when presentation.component is predefined. Defines what type of chart to show in the homepage thumbnails. Choose from predefined ones: bar, pie, column, map   |
 |  `presentation.chartTitle`  | | string    |  Used when presentation.component is predefined and a chart. Set the y title and tooltip title of the chart  |
 |  `presentation.chartColors`  | | array[string(`color`)]   |  Used when presentation.component is predefined. Sets the widget content color (if applicable)  |
 |  `entitlement`   | Yes | string  |  Determines if the user can see the widgets content / add it to a workspace  |
 |  `exportEntitlement` | | string  |  Determines if the user can export the widgets data  |
-|  `sidebar`   |   |object       |  What will be shown in the widget tab in the sidebar   |
+|  `sidebar`   |   |object       |  Configures sidebar behaviour for this particular widget   |
 |  `sidebar.filters`   | | boolean  |  Determines if to show filter section in sidebar, which displays filters defined in the filter config. If not defined or false and container.component is predefined, data will be presented straight away in the widget rather than clicking "run" from sidebar   |
 |  `sidebar.options`|  | array[string(`uniqueOptionKey`)]  |  Shows options section in sidebar populated with content from options config   |
 |  `minW`   |    | int       |  The smallest width the widget can shrink to   |
@@ -109,7 +121,7 @@ Filters.filters:
 |-----------|----------|--------------|-----------------------------------|
 |  `name`  | Yes | string | Title of the filter |
 |  `category`  | Yes | string(`uniqueCategoryKey`) | Sets the filters category which appears in filters list |
-|  `component` | Yes | string/function(`FilterComponent`)| Which component should present the filter. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
+|  `component` | Yes | string &#124; function(`FilterComponent`)| Which component should present the filter. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
 |  `items` | | array[{text, value}] | Static items for the filter |
 |  `autoComplete`  | | boolean | If filter should have autocomplete, only works when component is Dropdown |
 |  `autoCompleteEndpoint`  | If autoComplete = true | string | Endpoint to populate the dropdown filter with autocomplete results |
@@ -132,7 +144,7 @@ options = {
 |    Key    | Required |     Type     |            Description            |
 |-----------|----------|--------------|-----------------------------------|
 |  `name`  | Yes | string | Title of the option  |
-|  `component`  | Yes | string/function(`OptionComponent`) | Which component should present the option. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
+|  `component`  | Yes | string &#124; function(`OptionComponent`) | Which component should present the option. Write a custom one or choose from predefined: Dropdown, Checkbox, NumberRange, SliderRange ...  |
 |  `defaultValue` | |string | Default selected value of the option |
 |  `singleSelect` | If defaultValue = defined |string | Sets the option to single select |
 |  `items` | If component = string | array[{text, value}] | Items for the option |
@@ -155,7 +167,7 @@ results = {
 |  `entitlement`  | Yes | string | Determines if the user can see the results |
 |  `exportEntitlement`  | | string | Determines if the user can export the result data |
 |  `container`   |  Yes     | object       |   Data handling config  |
-|  `container.component`   | Yes | string/function(`ResultsContainerComponent`)     |   Which component should handle the data. Write a custom one or choose from predefined ones: ResultsContainer, ...  |
+|  `container.component`   | Yes | string &#124; function(`ResultsContainerComponent`)     |   Which component should handle the data. Write a custom one or choose from predefined ones: ResultsContainer, ...  |
 |  `container.endpoint`  | If container.component = string | string  |  The endpoint to fetch the data from. Ignored if container.component is a custom component   |
 |  `presentation`   |  If container.component = string  | object       |  Visual presentation config   |
 |  `presentation.component` | If container.component = string | string/function(`ResultsresentationComponent`)  |  Which component should present the data. Write a custom one or choose from predefined ones: Table ... Ignored if container.component is a custom component  |
