@@ -115,7 +115,7 @@ Example `config`:
      data: [
       {name: "Brown cow", y: 45},
       {name: "Red cow", y: 1},
-    ]
+    ],
     color: 'black'
   }]
 }
@@ -183,5 +183,46 @@ Example `config`:
 }
 ```
 
-#### Map (future)
+#### Map
+`Widgets.Map`
 Not ready to use
+
+
+#### Empty
+`Widgets.Empty`
+
+Gray box with a message "Use the panel on the left to add filters to this widget"
+
+
+#### Table
+`Widgets.Table`
+
+|    Prop    |     Type     |            Description            |
+|------------|--------------|-----------------------------------|
+|  `config`  | object | Table configuration |
+|  `data`  | object{hits: int, data: array[{}]} |  Table data |
+
+Example `config`:
+```
+{
+  rowsPerPage: 8,
+  sort: "asc",
+  sortBy: "cowtype",
+  columns: [
+    {name: "Cow Name", key: "cowname"},
+    {name: "Cow Colour", key: "cowcolor"},
+    {name: "Cow Type", key: "cowtype"}
+  ]
+}
+```
+Example `data`:
+```
+{
+  hits: 46,
+  data: [
+    {cowname: "Rosa", cowcolor: "Red", cowtype: "Angry Cow"},
+    {cowname: "Mona Lisa", cowcolor: "Brown", cowtype: "Normal Cow"},
+    + 6 more...
+  ]
+}
+```
