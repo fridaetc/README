@@ -14,7 +14,7 @@
 Installation:
 `npm install --save vor-agility`
 
-Usage:
+Import:
 `import AgilityApp from 'agility-app';`
 
 ## Config
