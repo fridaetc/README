@@ -1,3 +1,5 @@
+This package contains Agility's application.
+
 - App
   - Config
      - Categories
