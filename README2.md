@@ -1,3 +1,7 @@
+This package contains reusable components that constitute the building blocks of the `agility-app` package. These can be instantiated separately for further customisation. 
+
+Here's an overview of the exposed components.
+
 - Components
   - api
     - apiCall
@@ -22,6 +26,13 @@
     - colors
   
 ## Components
+
+Installing from NPM.
+
+`npm install --save agility-components`
+
+Importing:
+
 `import AgilityComponents from 'agility-components';`
 
 ### Api
@@ -186,7 +197,7 @@ Example `config`:
 
 #### Map
 `Widgets.Map`
-Not ready to use
+Not ready to use yet
 
 
 #### Empty
